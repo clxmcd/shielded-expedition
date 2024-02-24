@@ -34,6 +34,72 @@ naan: 1809.487509
 # Install Hermes service
 Downloading hermes-v1.7.4 and copy over to /usr/local/bin  
 
+# Edit config.toml 
+mkdir $HOME/.hermes
+vim $HOME/.hermes/config.toml
+```
+[global]
+log_level = 'info'
+ 
+[mode]
+
+[mode.clients]
+enabled = true
+refresh = true
+misbehaviour = true
+
+[mode.connections]
+enabled = false
+
+[mode.channels]
+enabled = false
+
+[mode.packets]
+enabled = true
+clear_interval = 10
+clear_on_start = false
+tx_confirmation = true
+
+[telemetry]
+enabled = false
+host = '127.0.0.1'
+port = 3001
+
+[[chains]]
+id = 'shielded-expedition.88f17d1d14' 
+type = 'Namada'
+rpc_addr = 'http://75.119.137.202:26657'  
+grpc_addr = 'http://75.119.137.202:9090' 
+event_source = { mode = 'push', url = 'ws://75.119.137.202:26657/websocket', batch_delay = '500ms' } 
+account_prefix = ''
+key_name = 'namada_relayer_morecon' 
+store_prefix = 'ibc'
+gas_price = { price = 0.0001, denom = 'tnam1qxvg64psvhwumv3mwrrjfcz0h3t3274hwggyzcee' } 
+rpc_timeout = '20s'
+
+[[chains]]
+id = 'osmo-test-5'
+type = 'CosmosSdk'
+rpc_addr = 'http://127.0.0.1:26657'  # set the IP and the port of the chain
+grpc_addr = 'http://127.0.0.1:9090'
+event_source = { mode = 'push', url = 'ws://127.0.0.1:26657/websocket', batch_delay = '500ms' } 
+account_prefix = 'osmo'
+key_name = 'osmosis_relayer_moreco'
+address_type = { derivation = 'cosmos' }
+store_prefix = 'ibc'
+default_gas = 400000
+max_gas = 120000000
+gas_price = { price = 0.0025, denom = 'uosmo' }
+gas_multiplier = 1.2
+max_msg_num = 30
+max_tx_size = 1800000
+clock_drift = '15s'
+max_block_time = '30s'
+trusting_period = '4days'
+trust_threshold = { numerator = '1', denominator = '3' }
+rpc_timeout = '20s'
+```
+
 # Add accounts of Relayer to Hermes for shielded-expedition and osmo-test-5
 Add osmo-test-5 account to hermes
 ```
@@ -52,6 +118,7 @@ namada_relayer_morecon.json
 ls $HOME/.hermes/keys/osmo-test-5/keyring-test/
 osmosis_relayer_moreco.json
 ```
+
 hermes --config $HERMES_CONFIG \
   create channel \
   --a-chain shielded-expedition.88f17d1d14 \
