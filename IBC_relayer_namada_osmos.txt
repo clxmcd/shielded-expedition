@@ -136,3 +136,20 @@ raw_log: '[]'
 timestamp: ""
 tx: null
 txhash: 364E3B33524296D0CE6457E5A9CC1291E463801AF63B53E0E6798758CCB6A5C5
+
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 1 \
+    --source namada_relayer_morecon \
+    --receiver osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc \
+    --token naan \
+    --channel-id channel-340 \
+    --node http://75.119.137.202:26657 \
+    --memo tpknam1qqm2cd40luwxhpaath4f9nf38d8f8rhy47jl25nn03gtlw4cpjkezjl85ud
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: 9815F361BC2F50996AA1E555F6797729BF05EC12A9BFCC86263F323EAB6DD066
+Inner transaction hash: 658B9890A1CA89EEAFE15864E1254C8F62CDF916633E31CAD81421759154511B
+Wrapper transaction accepted at height 52900. Used 26 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 52901. Used 6193 gas.
