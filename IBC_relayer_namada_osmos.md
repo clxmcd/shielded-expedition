@@ -9,7 +9,7 @@ export osmosis_relayer_morecon=osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
 ```
 
 # Generate and import accounts 
-Generate relayer account for osmos-test-5 
+Generate relayer account for osmos-test-5 and get faucet from https://faucet.testnet.osmosis.zone/
 ```
 osmosisd keys add  osmosis_relayer_morecon
 Enter keyring passphrase (attempt 1/3):
