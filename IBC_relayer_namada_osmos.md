@@ -126,6 +126,10 @@ hermes --config $HERMES_CONFIG \
   --a-port transfer \
   --b-port transfer \
   --new-client-connection --yes
+<details>
+  <summary> SUCCESS Channel </summary>
+  
+```
 2024-02-24T03:21:44.115377Z  INFO ThreadId(01) running Hermes v1.7.4+38f41c6
 2024-02-24T03:21:44.204352Z  INFO ThreadId(01) Creating new clients, new connection, and a new channel with order ORDER_UNORDERED
 2024-02-24T03:22:03.813736Z  INFO ThreadId(01) foreign_client.create{client=osmo-test-5->shielded-expedition.88f17d1d14:07-tendermint-0}: 🍭 client was created successfully id=07-tendermint-1173
@@ -140,6 +144,7 @@ hermes --config $HERMES_CONFIG \
 2024-02-24T03:24:34.323336Z  INFO ThreadId(01) 🎊  shielded-expedition.88f17d1d14 => OpenAckChannel(OpenAck { port_id: transfer, channel_id: channel-340, connection_id: connection-511, counterparty_port_id: transfer, counterparty_channel_id: channel-5850 }) at height 0-52834
 2024-02-24T03:24:49.651437Z  INFO ThreadId(01) 🎊  osmo-test-5 => OpenConfirmChannel(OpenConfirm { port_id: transfer, channel_id: channel-5850, connection_id: connection-2164, counterparty_port_id: transfer, counterparty_channel_id: channel-340 }) at height 5-5589511
 2024-02-24T03:24:52.698498Z  INFO ThreadId(01) channel handshake already finished for Channel { ordering: ORDER_UNORDERED, a_side: ChannelSide { chain: BaseChainHandle { chain_id: shielded-expedition.88f17d1d14 }, client_id: 07-tendermint-1173, connection_id: connection-511, port_id: transfer, channel_id: channel-340, version: None }, b_side: ChannelSide { chain: BaseChainHandle { chain_id: osmo-test-5 }, client_id: 07-tendermint-2288, connection_id: connection-2164, port_id: transfer, channel_id: channel-5850, version: None }, connection_delay: 0ns }
+
 SUCCESS Channel {
     ordering: Unordered,
     a_side: ChannelSide {
@@ -192,6 +197,9 @@ SUCCESS Channel {
     },
     connection_delay: 0ns,
 }
+```
+</details>
+
 
 osmosisd query bank balances osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
 balances:
