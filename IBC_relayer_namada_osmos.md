@@ -290,6 +290,10 @@ pagination:
 ```
 
 # Conclusion
-Namada wallet tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua received uosmo : transfer/channel-340/uosmo: 2000000  
-Osmos wallet osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc received nana : amount: "1" , denom: ibc/73703A34EF871C7320A4FA693A23679D43BD8409553D4F71A5F1787BED80A090
+Namada wallet tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua received uosmo:  
+transfer/channel-340/uosmo: 2000000  
+
+Osmos wallet osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc received nana:  
+- amount: "1"
+  denom: ibc/73703A34EF871C7320A4FA693A23679D43BD8409553D4F71A5F1787BED80A090
 
