@@ -31,6 +31,9 @@ namadac balance --owner namada_relayer_morecon --node $RPC
 naan: 1809.487509
 ```
 
+# Install Hermes service
+Downloading hermes-v1.7.4 and copy over to /usr/local/bin  
+
 # Add accounts of Relayer to Hermes for shielded-expedition and osmo-test-5
 Add osmo-test-5 account to hermes
 ```
