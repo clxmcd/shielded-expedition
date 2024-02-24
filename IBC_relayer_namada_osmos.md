@@ -5,7 +5,7 @@ This testcase is for the subclass of "Operating IBC/ Interoperability infrastruc
 We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet and Transfer token via relayer channel.
 
 
-**Channel:**   
+**Created Channel:**   
 channel-340 for shielded-expedition.88f17d1d14  
 channel-5850 for osmo-test-5  
 
