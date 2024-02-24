@@ -1,5 +1,13 @@
 We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet.   
 
+# Setup system environments
+```
+export HERMES_CONFIG="$HOME/.hermes/config.toml"  
+export RPC_NODE="http://75.119.137.202:26657"  
+export namada_relayer_morecon=tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua
+export osmosis_relayer_morecon=osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
+```
+
 # Generate and import accounts 
 Generate relayer account for osmos-test-5 
 ```
@@ -24,14 +32,6 @@ naan: 1809.487509
 ```
 
 # Accounts of Relayer for shielded-expedition and osmo-test-5
-Setup system environments
-```
-export HERMES_CONFIG=$HOME/.hermes/config.toml   
-export RPC=http://75.119.137.202:26657  
-export namada_relayer_morecon=tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua
-export osmosis_relayer_morecon=osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
-```
-
 echo "inside jungle bullet jealous round claim globe square feed increase balance eternal garment skill fiscal apple firm holiday permit tray boy summer swallow capable" > ./mnemonic_morecon
 hermes --config $HERMES_CONFIG keys add --chain osmo-test-5 --mnemonic-file ./mnemonic_morecon
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
