@@ -122,6 +122,7 @@ ls $HOME/.hermes/keys/osmo-test-5/keyring-test/
 osmosis_relayer_moreco.json
 ```
 # Create channel
+```
 hermes --config $HERMES_CONFIG \  
   create channel \  
   --a-chain shielded-expedition.88f17d1d14 \  
@@ -129,6 +130,7 @@ hermes --config $HERMES_CONFIG \
   --a-port transfer \  
   --b-port transfer \  
   --new-client-connection --yes
+```
 <details>
   <summary> SUCCESS Channel </summary>
   
@@ -203,7 +205,13 @@ SUCCESS Channel {
 ```
 </details>
 
-
+# Launch Hermes
+```
+tmux new -s my-hermes
+hermes --config $HOME/.hermes/config.toml start 
+```
+# Send faucets to verify if channels work normally.
+```
 osmosisd query bank balances osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
 balances:
 - amount: "99988373"
@@ -211,7 +219,8 @@ balances:
 
 namadac balance --owner namada_relayer_morecon --node $RPC
 naan: 1793.487509
-
+```
+```
 osmosisd tx ibc-transfer transfer \
   transfer \
   channel-5850 \
@@ -240,7 +249,8 @@ raw_log: '[]'
 timestamp: ""
 tx: null
 txhash: 364E3B33524296D0CE6457E5A9CC1291E463801AF63B53E0E6798758CCB6A5C5
-
+```
+```
 namadac --base-dir $HOME/.local/share/namada \
     ibc-transfer \
     --amount 1 \
@@ -257,7 +267,8 @@ Inner transaction hash: 658B9890A1CA89EEAFE15864E1254C8F62CDF916633E31CAD8142175
 Wrapper transaction accepted at height 52900. Used 26 gas.
 Waiting for inner transaction result...
 Transaction was successfully applied at height 52901. Used 6193 gas.
-
+```
+```
 namadac balance --owner namada_relayer_morecon --node $RPC
 naan: 1789.987509
 transfer/channel-340/uosmo: 2000000
@@ -271,5 +282,9 @@ balances:
 pagination:
   next_key: null
   total: "0"
+```
 
+# Conclusion
+Namada wallet tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua received uosmo : transfer/channel-340/uosmo: 2000000  
+Osmos wallet osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc received nana : amount: "1" , denom: ibc/73703A34EF871C7320A4FA693A23679D43BD8409553D4F71A5F1787BED80A090
 
