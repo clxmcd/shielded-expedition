@@ -100,4 +100,10 @@ SUCCESS Channel {
     connection_delay: 0ns,
 }
 
+osmosisd query bank balances osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
+balances:
+- amount: "99988373"
+  denom: uosmo
 
+namadac balance --owner namada_relayer_morecon --node $RPC
+naan: 1793.487509
