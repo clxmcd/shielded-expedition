@@ -112,7 +112,7 @@ rpc_timeout = '20s'
 ```
 </details>
 
-# Add accounts of Relayer to Hermes for shielded-expedition and osmo-test-5
+# Add accounts of Relayer to Hermes
 Add osmo-test-5 account to hermes
 ```
 echo "inside jungle bullet jealous round claim globe square feed increase balance eternal garment skill fiscal apple firm holiday permit tray boy summer swallow capable" > ./mnemonic_morecon
