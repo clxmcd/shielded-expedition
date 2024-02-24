@@ -107,3 +107,32 @@ balances:
 
 namadac balance --owner namada_relayer_morecon --node $RPC
 naan: 1793.487509
+
+osmosisd tx ibc-transfer transfer \
+  transfer \
+  channel-5850 \
+  tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua \
+  2000000uosmo \
+  --from osmosis_relayer_morecon \
+  --gas auto \
+  --gas-prices 0.025uosmo \
+  --gas-adjustment 1.2 \
+  --node http://127.0.0.1:26657 \
+  --home $HOME/.osmosisd \
+  --chain-id osmo-test-5 \
+  --yes
+Enter keyring passphrase (attempt 1/3):
+gas estimate: 131114
+code: 0
+codespace: ""
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: '[]'
+timestamp: ""
+tx: null
+txhash: 364E3B33524296D0CE6457E5A9CC1291E463801AF63B53E0E6798758CCB6A5C5
