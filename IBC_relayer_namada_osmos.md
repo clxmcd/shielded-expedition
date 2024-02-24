@@ -36,7 +36,9 @@ Downloading hermes-v1.7.4 and copy over to /usr/local/bin
 
 # Edit config.toml 
 mkdir $HOME/.hermes
-vim $HOME/.hermes/config.toml
+<details>
+    <summary> vim $HOME/.hermes/config.toml </summary>
+  
 ```
 [global]
 log_level = 'info'
@@ -99,6 +101,7 @@ trusting_period = '4days'
 trust_threshold = { numerator = '1', denominator = '3' }
 rpc_timeout = '20s'
 ```
+</details>
 
 # Add accounts of Relayer to Hermes for shielded-expedition and osmo-test-5
 Add osmo-test-5 account to hermes
@@ -118,13 +121,13 @@ namada_relayer_morecon.json
 ls $HOME/.hermes/keys/osmo-test-5/keyring-test/
 osmosis_relayer_moreco.json
 ```
-
-hermes --config $HERMES_CONFIG \
-  create channel \
-  --a-chain shielded-expedition.88f17d1d14 \
-  --b-chain osmo-test-5 \
-  --a-port transfer \
-  --b-port transfer \
+# Create channel
+hermes --config $HERMES_CONFIG \  
+  create channel \  
+  --a-chain shielded-expedition.88f17d1d14 \  
+  --b-chain osmo-test-5 \  
+  --a-port transfer \  
+  --b-port transfer \  
   --new-client-connection --yes
 <details>
   <summary> SUCCESS Channel </summary>
