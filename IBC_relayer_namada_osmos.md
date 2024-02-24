@@ -31,11 +31,24 @@ namadac balance --owner namada_relayer_morecon --node $RPC
 naan: 1809.487509
 ```
 
-# Accounts of Relayer for shielded-expedition and osmo-test-5
+# Add accounts of Relayer to Hermes for shielded-expedition and osmo-test-5
+Add osmo-test-5 account to hermes
+```
 echo "inside jungle bullet jealous round claim globe square feed increase balance eternal garment skill fiscal apple firm holiday permit tray boy summer swallow capable" > ./mnemonic_morecon
 hermes --config $HERMES_CONFIG keys add --chain osmo-test-5 --mnemonic-file ./mnemonic_morecon
+```
+Add shielded-expedition account to hermes
+```
 hermes --config $HERMES_CONFIG keys add --chain shielded-expedition.88f17d1d14 --key-file $HOME/.local/share/namada/shielded-expedition.88f17d1d14/wallet.toml 
+```
+check accounts
+```
+ls $HOME/.hermes/keys/shielded-expedition.88f17d1d14/keyring-test
+namada_relayer_morecon.json
 
+ls $HOME/.hermes/keys/osmo-test-5/keyring-test/
+osmosis_relayer_moreco.json
+```
 hermes --config $HERMES_CONFIG \
   create channel \
   --a-chain shielded-expedition.88f17d1d14 \
