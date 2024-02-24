@@ -1,5 +1,11 @@
 We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet.   
 
+This testcase is for the subclass of "Operating IBC/ Interoperability infrastructure". We've completed "Operate a Shielded Expedition-compatible Osmosis testnet relayer"  
+
+**Channel:** 
+channel-340 for shielded-expedition.88f17d1d14  
+channel-5850 for osmo-test-5  
+
 # Setup system environments
 ```
 export HERMES_CONFIG="$HOME/.hermes/config.toml"  
