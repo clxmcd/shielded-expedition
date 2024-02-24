@@ -1,3 +1,14 @@
 We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet.   
 
+namadac balance --owner namada_relayer_morecon --node $RPC
+naan: 1809.487509
 
+osmosisd keys add  osmosis_relayer_morecon
+Enter keyring passphrase (attempt 1/3):
+- address: osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
+  name: osmosis_relayer_morecon
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"AyBhfQ8sIabvZpm6rjN1xX/6f6q1+JFTtNdYGk9gN5qd"}'
+  type: local
+**Important** write this mnemonic phrase in a safe place.
+It is the only way to recover your account if you ever forget your password.
+inside jungle bullet jealous round claim globe square feed increase balance eternal garment skill fiscal apple firm holiday permit tray boy summer swallow capable
