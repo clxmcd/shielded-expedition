@@ -1,6 +1,5 @@
-We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet.   
-
 This testcase is for the subclass of "Operating IBC/ Interoperability infrastructure". We've completed "Operate a Shielded Expedition-compatible Osmosis testnet relayer"  
+We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis testnet and Transfer token via relayer channel.
 
 **Channel:** 
 channel-340 for shielded-expedition.88f17d1d14  
