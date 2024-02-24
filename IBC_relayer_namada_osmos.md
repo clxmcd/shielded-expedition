@@ -36,7 +36,7 @@ Import relayer account for Namada
 ```
 namadaw derive --alias namada_relayer_morecon
 
-namadac balance --owner namada_relayer_morecon --node $RPC
+namadac balance --owner namada_relayer_morecon --node $RPC_NODE
 naan: 1809.487509
 ```
 
@@ -226,7 +226,7 @@ balances:
 - amount: "99988373"
   denom: uosmo
 
-namadac balance --owner namada_relayer_morecon --node $RPC
+namadac balance --owner namada_relayer_morecon --node $RPC_NODE
 naan: 1793.487509
 ```
 ```
@@ -278,7 +278,7 @@ Waiting for inner transaction result...
 Transaction was successfully applied at height 52901. Used 6193 gas.
 ```
 ```
-namadac balance --owner namada_relayer_morecon --node $RPC
+namadac balance --owner namada_relayer_morecon --node $RPC_NODE
 naan: 1789.987509
 transfer/channel-340/uosmo: 2000000
 
