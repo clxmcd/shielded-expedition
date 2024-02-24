@@ -153,3 +153,19 @@ Inner transaction hash: 658B9890A1CA89EEAFE15864E1254C8F62CDF916633E31CAD8142175
 Wrapper transaction accepted at height 52900. Used 26 gas.
 Waiting for inner transaction result...
 Transaction was successfully applied at height 52901. Used 6193 gas.
+
+namadac balance --owner namada_relayer_morecon --node $RPC
+naan: 1789.987509
+transfer/channel-340/uosmo: 2000000
+
+query bank balances osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
+balances:
+- amount: "1"
+  denom: ibc/73703A34EF871C7320A4FA693A23679D43BD8409553D4F71A5F1787BED80A090
+- amount: "97985095"
+  denom: uosmo
+pagination:
+  next_key: null
+  total: "0"
+
+
