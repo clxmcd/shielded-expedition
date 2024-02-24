@@ -12,3 +12,12 @@ Enter keyring passphrase (attempt 1/3):
 **Important** write this mnemonic phrase in a safe place.
 It is the only way to recover your account if you ever forget your password.
 inside jungle bullet jealous round claim globe square feed increase balance eternal garment skill fiscal apple firm holiday permit tray boy summer swallow capable
+
+# Accounts of Relayer for shielded-expedition and osmo-test-5
+Setup system environments
+```
+export HERMES_CONFIG=$HOME/.hermes/config.toml   
+export RPC=http://75.119.137.202:26657  
+export namada_relayer_morecon=tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua
+export osmosis_relayer_morecon=osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc
+```
