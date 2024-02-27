@@ -6,8 +6,8 @@ We demonstate how to create IBC relayer channel on Namada SE testnet and Osmosis
 
 
 **Created Channel:**   
-channel-340 for shielded-expedition.88f17d1d14  
-channel-5850 for osmo-test-5  
+channel-433 for shielded-expedition.88f17d1d14  
+channel-5894 for osmo-test-5  
 
 # Setup system environments
 ```
@@ -301,3 +301,119 @@ Osmos wallet osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc received naan:
 amount: "1"  
 denom: ibc/73703A34EF871C7320A4FA693A23679D43BD8409553D4F71A5F1787BED80A090
 
+---
+# UPDATE 2024-2-17
+
+## Update Client
+```
+hermes update client --host-chain shielded-expedition.88f17d1d14 --client 07-tendermint-1173
+```
+**New channel:**  
+Namada: channel-433   
+Osmosis: channel-5894
+
+<details>
+  <summary> SUCCESS UpdateClient </summary>
+```
+SUCCESS [
+    UpdateClient(
+        UpdateClient {
+            common: Attributes {
+                client_id: ClientId(
+                    "07-tendermint-1173",
+                ),
+                client_type: Tendermint,
+                consensus_height: Height {
+                    revision: 5,
+                    height: 5653043,
+                },
+            },
+            header: Some(
+                Tendermint(
+                     Header {...},
+                ),
+            ),
+        },
+    ),
+    SendPacket(
+        SendPacket {
+            packet: Packet {
+                sequence: Sequence(
+                    28,
+                ),
+                source_port: PortId(
+                    "transfer",
+                ),
+                source_channel: ChannelId(
+                    "channel-433",
+                ),
+                destination_port: PortId(
+                    "transfer",
+                ),
+                destination_channel: ChannelId(
+                    "channel-5894",
+                ),
+                data: [123, 34, 100, 101, 110, 111, 109, 34, 58, 34, 116, 114, 97, 110, 115, 102, 101, 114, 47, 99, 104, 97, 110, 110, 101, 108, 45, 52, 51, 51, 47, 117, 111, 115, 109, 111, 34, 44, 34, 97, 109, 111, 117, 110, 116, 34, 58, 34, 49, 49, 53, 49, 49, 49, 49, 34, 44, 34, 115, 101, 110, 100, 101, 114, 34, 58, 34, 116, 110, 97, 109, 49, 113, 114, 114, 101, 122, 48, 48, 112, 57, 116, 97, 107, 100, 99, 107, 121, 110, 107, 122, 115, 53, 104, 117, 55, 113, 52, 55, 115, 56, 48, 107, 101, 115, 113, 100, 48, 108, 112, 53, 116, 34, 44, 34, 114, 101, 99, 101, 105, 118, 101, 114, 34, 58, 34, 111, 115, 109, 111, 49, 99, 107, 110, 57, 112, 121, 115, 97, 122, 103, 112, 52, 104, 51, 50, 104, 116, 108, 48, 118, 97, 118, 104, 55, 115, 55, 54, 52, 48, 106, 100, 103, 100, 57, 50, 55, 55, 122, 34, 44, 34, 109, 101, 109, 111, 34, 58, 34, 34, 125],
+                timeout_height: Never,
+                timeout_timestamp: Timestamp {
+                    time: Some(
+                        Time(
+                            2024-02-27 3:18:30.807414412,
+                        ),
+                    ),
+                },
+            },
+        },
+    ),
+]
+```
+</details>
+
+IBC transfer for testing
+```
+namadac --base-dir $HOME/.local/share/namada \
+    ibc-transfer \
+    --amount 1 \
+    --source namada_relayer_morecon \
+    --receiver osmo1lj40hntzcufr6l68e0gnkm88vgd2k7ys3qz5nc \
+    --token naan \
+    --channel-id channel-433 \
+    --node http://75.119.137.202:26657 \
+    --memo tpknam1qqm2cd40luwxhpaath4f9nf38d8f8rhy47jl25nn03gtlw4cpjkezjl85ud
+Enter your decryption password: 
+Transaction added to mempool.
+Wrapper transaction hash: D0CBEA1A28B6F2DAB91EDE692FE2655D7CC26E20BF14E27DE478E632F611F195
+Inner transaction hash: 60DB065D5D776DECF65BD6A5A575BCEACAB4CEAF83F1B60C874BA2236A23B75A
+Wrapper transaction accepted at height 76095. Used 26 gas.
+Waiting for inner transaction result...
+Transaction was successfully applied at height 76096. Used 6193 gas.
+
+osmosisd tx ibc-transfer transfer \
+  transfer \
+  channel-5894 \
+  tnam1qqssedgx7nyak90d9r2dvdw8wn3tx3kr6u2vv5ua \
+  1000000uosmo \
+  --from osmosis_relayer_morecon \
+  --gas auto \
+  --gas-prices 0.025uosmo \
+  --gas-adjustment 1.2 \
+  --node http://127.0.0.1:26657 \
+  --home $HOME/.osmosisd \
+  --chain-id osmo-test-5 \
+  --yes
+Enter keyring passphrase (attempt 1/3):
+gas estimate: 116598
+code: 0
+codespace: ""
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: '[]'
+timestamp: ""
+tx: null
+txhash: E6FDDD5C8C90610CFEDAF062F34936FA7C0F803A074C3A083FC7B40E23F25CB3
+```
