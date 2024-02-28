@@ -12,8 +12,6 @@ channel-5894 for osmo-test-5
 **Proofs:**   
 [Transaction details of IBC create client](https://testnet.mintscan.io/osmosis-testnet/txs/B8B0BD8869533F7F23403B0C171BF19794EE6CAE243101F02E0F742DC74C6A96?height=5589471)  
 [Transaction details of IBC transfer](https://testnet.mintscan.io/osmosis-testnet/txs/364E3B33524296D0CE6457E5A9CC1291E463801AF63B53E0E6798758CCB6A5C5?height=5589623)  
-[Transaction details of IBC update client](https://testnet.mintscan.io/osmosis-testnet/txs/2EE10DE6FEAD8E7AA6659207BF4312ACCBBF9EBD5C3387EE1AB1A537DFE8FB15?height=5589511)  
-
 
 # Setup system environments
 ```
@@ -320,6 +318,7 @@ Osmosis: channel-5894
 
 <details>
   <summary> SUCCESS UpdateClient </summary>
+  
 ```
 SUCCESS [
     UpdateClient(
